@@ -5,6 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    urlApi: 'https://pokeapi.co/api/v2',
+    favorites: [],
   },
   mutations: {
   },

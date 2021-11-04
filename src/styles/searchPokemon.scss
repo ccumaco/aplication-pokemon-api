@@ -1,0 +1,138 @@
+@import './variables.scss';
+@import './animations.scss';
+
+.container-search-pokemon{
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 3.2rem;
+    background-color: $background-color;
+    .container-loading{
+        z-index: 2;
+        background: $background-color;
+        min-height: 100vh;
+        min-width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        background-color: #fff;
+        .loading{
+            position: absolute;
+            animation: loading 3.2s infinite;
+            width: 106px;
+        }
+    }
+    .targets-pokemons{
+        max-width: 570px;
+        margin: 0 auto;
+        padding: 2rem 0;
+        @include md{
+            padding: 1rem 0;
+        }
+        .container-input{
+            @include md{
+                text-align: center;
+            }
+        }
+        .input-search{
+            color: $color-input;
+            @include card-input;
+            @include md{
+                width: 80%;
+                text-align: left;
+                margin: 0 auto;
+            }
+            &::placeholder{
+                color: $color-input;
+            }
+            &.target{
+                cursor: pointer;
+                color: $black-color;
+                font-family: $lato-regular;
+                margin-top: 10px;
+                display: flex;
+                padding: 0.5rem 20px;
+                justify-content: space-between;
+                align-items: center;
+                &:nth-child(1){
+                    margin-top: 40px;
+                }
+                &:hover{
+                    background-color: #F2253917;
+                }
+                .star{
+                    z-index: 1;
+                    cursor: pointer;
+                    transition: all 1s;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        .not-found{
+            text-align: center;
+            .title-not-found{
+                color: $tertiary-title;
+                font-family: $lato-regular;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 36px;
+                margin-top: 50px;
+                margin-bottom: 10px;
+            }
+            .paragraph-not-found{
+                color: $secondary-text;
+                font-family: $lato-regular;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+            .come-back{
+                @include buttons;
+            }
+        }
+    }
+    .options{
+        z-index: 1;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        background-color: $white-color;
+        @include md{
+            width: 91%;
+        }
+        .container-options{
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            @include md{
+                justify-content: center
+            }
+            .buttons-options{
+                @include buttons;
+                background-color: $color-input;
+                display: inline-flex;
+                justify-content: center;
+                width: 100%;
+                span{
+                    margin-left: 0.4rem
+                }
+                &.active{
+                    @include buttons;
+                }
+                &:first-child{
+                    margin-right: 1rem;
+                }
+                @include md{
+                    width: 40%;
+                }
+            }
+        }
+    }
+}

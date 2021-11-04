@@ -1,0 +1,43 @@
+$primary-red: #F22539;
+$secondary-text: #5E5E5E;
+$tertiary-title: #353535;
+$black-color: #000;
+$white-color: #fff;
+$color-input: #BFBFBF;
+$background-color: #F9F9F9;
+$lato-regular: "Lato-regular";
+
+@mixin md {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@font-face {
+    font-family: $lato-regular;
+    src: url(./../assets/fonts/lato/Lato-Regular.ttf);
+}
+
+@mixin buttons {
+    color: $white-color;
+    padding: 11px 20px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 30px;
+    border: 0;
+    background-color: $primary-red;
+    font-family: $lato-regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+@mixin card-input {
+    border-radius: 5px;
+    padding: 1rem 20px;
+    background: $white-color;
+    outline: none;
+    border:0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    width: 100%;
+}
