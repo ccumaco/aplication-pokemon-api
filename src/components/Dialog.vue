@@ -14,7 +14,7 @@
       <p class="options-character"><b>Types:</b> {{ dataPokemon.types[0].type.name }}</p>
       <input id="copyText" :value="stringData" />
       <div class="container-share">
-        <button class="share" @click="sharePokemon(dataPokemon)">Share to my friends</button>
+        <button class="share" @click="sharePokemon(dataPokemon)">Share to my friends</button> <span id="textToCopy"></span>
           <img
             v-if="!pokemonDialog.visible"
             class="star"
@@ -53,18 +53,18 @@ export default {
       this.$emit("setDialog", dataPokemon, visible);
     },
     sharePokemon(){
-      this.stringData = []
-        if (typeof this.stringData != 'string') {
-          
-            for (let i = 0; i < document.querySelectorAll('.options-character').length; i++) {
+          this.stringData = []
+          for (let i = 0; i < document.querySelectorAll('.options-character').length; i++) {
               const element = document.querySelectorAll('.options-character')[i];
             this.stringData.push(element.innerText);
           }
-        }
           this.stringData = this.stringData.toString()
-          document.getElementById('copyText').focus();
-          document.execCommand('selectAll');
-          document.execCommand('copy');
+          setTimeout(() => {
+            document.getElementById('copyText').focus();
+            document.execCommand('selectAll');
+            document.execCommand('copy');
+            document.getElementById('textToCopy').innerHTML = 'Copied!';
+          }, 100);
     },
     getPokemons() {
       axios

@@ -10,6 +10,7 @@
     width: 100%;
     height: 100vh;
     background: #6f6f6f91;
+    overflow: hidden;
     .card-dialog{
       background: #fff;
       border-radius: 5px;
@@ -56,8 +57,19 @@
         color: $secondary-text;
         font-family: $lato-regular;
       }
+      #textToCopy{
+        color: $primary-red;
+        font-family: $lato-regular;
+      }
       #copyText{
-        // display: none;
+        border: 0;
+        outline: transparent;
+        color: transparent;
+        position: absolute;
+        &::selection{
+          color: transparent;
+          background-color: transparent;
+        }
       }
       .container-share{
           display: flex;
