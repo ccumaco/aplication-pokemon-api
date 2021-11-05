@@ -1,5 +1,5 @@
 <template>
-  <div class="background-dialog" v-if="dataPokemon.name && showDialog">
+  <div class="background-dialog" v-if="dataPokemon && showDialog">
     <div class="card-dialog">
       <div class="background-pokemon">
         <span class="close-btn" @click="updateDialogParent(dataPokemon, false)">X</span>

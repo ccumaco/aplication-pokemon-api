@@ -11,7 +11,7 @@
       <div class="container-input">
         <input
           class="input-search"
-          @click="openDialog(pokemon, true)"
+          @click="openDialog({}, false)"
           type="text"
           name="seach"
           id="seach"
