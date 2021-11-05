@@ -8,6 +8,7 @@
     background-color: $background-color;
     .container-loading{
         z-index: 2;
+        overflow: hidden;
         background: $background-color;
         min-height: 100vh;
         min-width: 100%;
@@ -103,11 +104,8 @@
         text-align: center;
         padding: 1rem;
         background-color: $white-color;
-        @include md{
-            width: 91%;
-        }
         .container-options{
-            max-width: 600px;
+            max-width: 570px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
